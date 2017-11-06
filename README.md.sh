@@ -35,7 +35,7 @@ $(./paquery.py 2>&1 | sed -n '/Usage:/,$p')
 
 \`[--metadata METADATA]\` - specify METADATA filename, or False for "no metadata download". Default is STDOUT.
 
-\`[--loglevel LOGLEVE]\` - specify Python loglevel, one of DEBUG, INFO, ERROR.
+\`[--loglevel LOGLEVEL]\` - specify Python loglevel, one of DEBUG, INFO, ERROR.
 
 
 ### Example 1: Download a thumbnail image of Hamburg's new landmark into the "samples" folder
