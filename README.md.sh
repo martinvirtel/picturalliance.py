@@ -47,14 +47,14 @@ $(./paquery.py "Elbphilharmonie" --limit=1 --destination=samples/ --download=thu
 
 
 
-### Example 2: Download a layout-sized image of 2010 or earlier mentioning Hamburg's new landmark into the \'samples\' folder, and the metadata into \`samples/metadata.json\`. 
+### Example 2: Download a layout-sized and a hires-sized image of 2010 or earlier mentioning Hamburg's new landmark into the \'samples\' folder, and the metadata into \`samples/metadata.json\`. 
 
 \`\`\`bash
 ./paquery.py "Elbphilharmonie" --limit=1 --destination=samples/ \\
-             --download=layout --endDate=2010-12-01 --metadata=samples/metadata.json
+             --download=hires,layout --endDate=2010-12-01 --metadata=samples/metadata.json
 
 
-$(./paquery.py "Elbphilharmonie" --limit=1 --destination=samples/ --download=layout --endDate=2010-12-01 --metadata=False 2>&1)
+$(./paquery.py "Elbphilharmonie" --limit=1 --destination=samples/ --download=layout --endDate=2010-12-01 --metadata=samples/metadata.json 2>&1)
 \`\`\`
 
 
