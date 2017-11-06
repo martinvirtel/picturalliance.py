@@ -8,7 +8,9 @@ This is a demo python client for the API of Picture Alliance. It was tested with
 
 ## Requirements
 
-This client is written in Python 3.6. Requirements are listed in the \`requirements.txt\` file. 
+This client is written in Python 3.6. Requirements are listed in the \`requirements.txt\` file. You can install them 
+with \`pip install -r requirements.txt\`.
+`
 
 ## The command line client 
 \`\`\`bash
