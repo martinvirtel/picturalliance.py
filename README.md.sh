@@ -6,7 +6,9 @@ cat <<__END__
 
 This is a demo python client for the API of Picture Alliance. It was tested with their API as of Version V.1.1 dated September 10, 2017. It includes a demo command line tool that can be used for downloading metadata and images. 
 
+## Requirements
 
+This client is written in Python 3.6. Requirements are listed in the \`requirements.txt\` file. 
 
 ## The command line client 
 \`\`\`bash
@@ -73,16 +75,14 @@ $(./paquery.py "Elbphilharmonie" --limit=1 --endDate=2010-12-01 | jq .  2>&1)
 
 ### Caveats
 
-While implementing this sample client, there were some things I stumbled upon. This list may help others who
-are on the same assignment.
+While implementing this sample client, there were some things I stumbled upon. This list may help others. 
 
 
-  - The API returns HTTP Error Code 403 if your credentials are wrong, but also if your credentials are right,
-  but your IP address is not whitelisted by the API
+  - The API returns HTTP Error Code 403 if your credentials are correct, but your IP address is not whitelisted by the API.
 
-  - The \`/search\` endpoint parameters startDate, date, endDate do not work with GET. POST works.
+  - The \`/search\` endpoint parameters \`startDate\`, \`date\`, \`endDate\` do not work with \`GET\`. \`POST\` works.
 
-  - Some values of \`endDate\` raise a HTTP Error Code 400, for example \`--endDate=2010-12-10\`
+  - Some values of \`endDate\` raise a HTTP Error Code 400, for example \`--endDate=2010-12-10\`.
 
 
 
