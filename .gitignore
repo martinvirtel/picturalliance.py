@@ -1,2 +1,5 @@
-.credentials
+.credentials*
 credentials.py
+__pycache__/
+.ropeproject/
+
