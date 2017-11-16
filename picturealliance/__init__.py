@@ -1,12 +1,26 @@
 #
 # coding: utf-8
 
-import requests
+
+import sys
+
+try :
+    assert sys.version_info >= (3,6)
+except Exception :
+    print(""" Python version is %d.%d. Minimum required is 3.6.
+              If you want help for running different python versions,
+              consider using pyenv https://github.com/pyenv/pyenv""" % sys.version_info)
+
+try :
+    import requests
+except ImportError as e:
+    print("{e} - please run pip install -r requirements.txt to install required libraries")
+
+
 import time
 import logging
 import sys
 import json
-import sys
 import mimetypes
 
 
