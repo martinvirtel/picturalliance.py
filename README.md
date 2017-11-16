@@ -1,7 +1,7 @@
 
 # picturealliance.py
 
-This is a demo python client for the API of Picture Alliance. It was tested with their API as of Version V.1.1 dated September 10, 2017. It includes a demo command line tool that can be used for downloading metadata and images. 
+This is a demo python client for the API of Picture Alliance. It was tested with their API as of [Version V.1.1 dated September 10, 2017][pdf]. It includes a demo command line tool that can be used for downloading metadata and images. 
 
 ## Requirements
 
@@ -142,4 +142,4 @@ While implementing this sample client, there were some things I stumbled upon. T
   - Some values of `endDate` raise a HTTP Error Code 400, for example `--endDate=2010-12-10`.
 
 
-
+[pdf]:https://drive.google.com/file/d/0B-BhWVdbxEELNFlIRnkxaFhvblk/view
