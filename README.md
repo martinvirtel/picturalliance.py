@@ -21,7 +21,7 @@ Usage:       paquery.py SEARCH [LIMIT] [STARTDATE] [ENDDATE] [LANG] [DATE] [DOWN
 
 `[--limit LIMIT]`  - limit the download to LIMIT images (please use 100 or less).
 
-`[--startDate STARTDATE] [--endDate ENDDATE] [--date DATE]`  - limit the search to DATE or STARTDATE to ENDDATE.
+`[--startDate STARTDATE] [--endDate ENDDATE] [--date DATE]`  - limit the search to DATE or STARTDATE to ENDDATE. Not all dates work, please see "Caveats" below. 
 
 `[--lang LANG]`  - search language - de. 
 
