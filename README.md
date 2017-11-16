@@ -139,7 +139,7 @@ While implementing this sample client, there were some things I stumbled upon. T
 
   - The `/search` endpoint parameters `startDate`, `date`, `endDate` do not work with `GET`. `POST` works.
 
-  - Some values of `endDate` raise a HTTP Error Code 400, for example `--endDate=2010-12-10`. `--endDate=2010-12-09` works.
+  - Some values of `endDate` and `startDate` raise a HTTP Error Code 400. This seems to be the case for all dates between the 10th of October, November, December and the end of those months, for any year that I tested between 1980 and 2017. For example `--endDate=2010-12-10` fails, but `--endDate=2010-12-09` works.
 
 
 [pdf]:https://drive.google.com/file/d/0B-BhWVdbxEELNFlIRnkxaFhvblk/view
