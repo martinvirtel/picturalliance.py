@@ -127,7 +127,10 @@ class PictureAllianceSearchResult(object) :
             self.url=url
             self.api=api
             self._metadata=None
-            self.images=[ PictureAllianceImage(a["id"],api=api) for a in d["results"]["images"]]
+            if "images" in d["results"] :
+                self.images=[ PictureAllianceImage(a["id"],api=api) for a in d["results"]["images"]]
+            else :
+                self.images=[]
         else:
             raise PictureAllianceBadRequest(repr(d))
 
@@ -181,6 +184,8 @@ class PictureAllianceImage(object) :
         else :
             response=self.api.get("/open-pa/v1/downloads/images/{}".format(self.id),params=kwargs)
         if response.status_code < 300 :
+            # import IPython
+            # IPython.embed()
             if "content-disposition" not in response.headers :
                 response.headers["content-disposition"]='inline; filename="{id}{ext}"'.format(
                        id=self.id,
