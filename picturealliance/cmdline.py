@@ -39,9 +39,11 @@ def cmdline(search,limit=2,
     # for Picturepunk: Use just API_KEY
     pa = PictureAllianceClient(application_id=credentials.API_KEY)
     if re.search(r"(\d{6,},?)+", str(search))  :
-        imageids=[str(a) for a in re.split(r" *, *",str(search))]
+        imageids=search
+        if type(imageids) == int :
+            imageids=[imageids]
         print("Download:{}".format(imageids))
-        result=PictureAllianceSearchResult({ "results" : { "images" : [{ "id" : a } for a in imageids ] } }, api=pa)
+        result=PictureAllianceSearchResult({ "results" : { "images" : [{ "id" : str(a) } for a in imageids ] } }, api=pa)
     else :
         result=pa.search(search,limit=limit,startDate=startDate,endDate=endDate,lang=lang,date=date)
     if metadata:
