@@ -4,6 +4,7 @@ import logging
 import mimetypes
 import os
 import sys
+import re
 
 logger=logging.getLogger('')
 
@@ -37,7 +38,12 @@ def cmdline(search,limit=2,
     # pa=PictureAllianceClient(client_id=credentials.CLIENT_ID,client_secret=credentials.CLIENT_SECRET)
     # for Picturepunk: Use just API_KEY
     pa = PictureAllianceClient(application_id=credentials.API_KEY)
-    result=pa.search(search,limit=limit,startDate=startDate,endDate=endDate,lang=lang,date=date)
+    if re.search(r"(\d{6,}+,)+", search)  :
+        imageids=re.split(r" *, *",search)
+        print("Download:{}".format(imageids))
+        result=PictureAllianceSearchResult({ "results" : { "images" : { "id" : a for a in imageids } } }, api=pa)
+    else :
+        result=pa.search(search,limit=limit,startDate=startDate,endDate=endDate,lang=lang,date=date)
     if metadata:
         if metadata == True :
             out=sys.stdout

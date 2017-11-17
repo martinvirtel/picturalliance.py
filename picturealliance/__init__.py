@@ -129,6 +129,9 @@ class PictureAllianceClient(object) :
         # embed_ipython()
         return PictureAllianceSearchResult(result.json(),api=self,url=result.url)
 
+    def image(self,id) :
+        return PictureAllianceImage(id,api=self)
+
 class PictureAllianceSearchResult(object) :
 
     __slots__= ('message', 'count', 'images','url','api', '_metadata')
