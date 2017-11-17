@@ -129,6 +129,18 @@ INFO:root:samples/57359450_layout.jpg written
 }
 ```
 
+### Example 4: Download two images by id
+
+```bash
+
+./paquery.py 81454735,81454747 --download=hires --metadata=False
+Download:(81454735, 81454747)
+INFO:root:./81454735_hires.jpg written
+INFO:root:./81454747_hires.jpg written
+
+```
+
+
 
 ### Caveats
 
