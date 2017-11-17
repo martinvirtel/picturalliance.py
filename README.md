@@ -17,7 +17,7 @@ Usage:       paquery.py SEARCH [LIMIT] [STARTDATE] [ENDDATE] [LANG] [DATE] [DOWN
 ```
 
 
-`SEARCH`  - the search term.
+`SEARCH`  - the search term. You can also use an image id (usually a number like 12412043), or several ids separated by ",".
 
 `[--limit LIMIT]`  - limit the download to LIMIT images (please use 100 or less).
 
