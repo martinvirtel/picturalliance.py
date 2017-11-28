@@ -151,7 +151,7 @@ While implementing this sample client, there were some things I stumbled upon. T
 
   - The `/search` endpoint parameters `startDate`, `date`, `endDate` do not work with `GET`. `POST` works.
 
-  - Some values of `endDate` and `startDate` raise a HTTP Error Code 400. This seems to be the case for all dates between the 10th of October, November, December and the end of those months, for any year that I tested between 1980 and 2017. For example `--endDate=2010-12-10` fails, but `--endDate=2010-12-09` works.
+  - Some values of `--date`, `--endDate` and `--startDate` do not work from the command line (but they work using the library). This is an unexpected behaviour of fire, the python library used to parse the command line parameters. I've filed an [issue](https://github.com/google/python-fire/issues/102) with them for this, maybe they want to change it. This affects every date that can be read as an arithmetics expression. "2018-10-10" will yield 1998, since 1998 is 2018 minus 10 minus 10. So for example `--endDate=2010-12-10` fails, but `--endDate=2010-12-09` works.
 
 
 [pdf]:https://drive.google.com/file/d/0B-BhWVdbxEELNFlIRnkxaFhvblk/view

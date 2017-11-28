@@ -23,10 +23,28 @@ import sys
 import json
 import mimetypes
 
-
-
-logging.basicConfig(level=logging.DEBUG,stream=sys.stderr)
 logger = logging.getLogger(__name__)
+logging.basicConfig(level=logging.DEBUG,stream=sys.stderr)
+
+
+DEBUG = False
+
+if DEBUG :
+    #
+    # Debug Headers
+    #
+    requests_log = logging.getLogger("requests.packages.urllib3")
+    requests_log.setLevel(logging.DEBUG)
+    requests_log.propagate = True
+
+    try:
+        import http.client as http_client
+    except ImportError:
+        # Python 2
+        import httplib as http_client
+    http_client.HTTPConnection.debuglevel = 1
+
+
 
 class PictureAllianceBadRequest(ValueError) :
     pass
@@ -101,6 +119,7 @@ class PictureAllianceClient(object) :
         else :
             thisurl=args[0]
         thisurl="{}{}".format(PictureAllianceClient.url,args[0])
+        logger.debug("{}".format(repr(kwargs)))
         return self.session.post(thisurl,**kwargs)
 
 
