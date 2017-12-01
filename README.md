@@ -151,7 +151,7 @@ While implementing this sample client, there were some things I stumbled upon. T
 
   - The `/search` endpoint parameters `startDate`, `date`, `endDate` do not work with `GET`. `POST` works.
 
-  - Some values of `--date`, `--endDate` and `--startDate` do not work from the command line (but they work when directly using the `pictuneralliance` module included in this repository). This is an unexpected behaviour of fire, the python library used to parse the command line parameters. I've filed an [issue](https://github.com/google/python-fire/issues/102) with the authors for this, maybe they want to change it. This affects every date that can be read as an arithmetics expression. `2018-10-10` will be resolved to `1998`, since `1998` is `2018` minus `10` minus `10`. So for example `--endDate=2010-12-10` fails, but `--endDate=2010-12-09` works.
+  - Some values of `--date`, `--endDate` and `--startDate` do not work from the command line (but they work when directly using the `picturalliance` module included in this repository). This is an unexpected behaviour of fire, the python library used to parse the command line parameters. I've filed an [issue](https://github.com/google/python-fire/issues/102) with the authors for this, maybe they want to change it. This affects every date that can be read as an arithmetics expression. `2018-10-10` will be resolved to `1998`, since `1998` is `2018` minus `10` minus `10`. So for example `--endDate=2010-12-10` fails, but `--endDate=2010-12-09` works.
 
 
 [pdf]:https://drive.google.com/file/d/0B-BhWVdbxEELNFlIRnkxaFhvblk/view
