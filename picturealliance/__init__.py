@@ -14,7 +14,7 @@ except Exception :
 try :
     import requests
 except ImportError as e:
-    print("{e} - please run pip install -r requirements.txt to install required libraries")
+    printf("{e} - please run pip install -r requirements.txt to install required libraries")
 
 
 import time
@@ -51,7 +51,8 @@ class PictureAllianceBadRequest(ValueError) :
 
 class PictureAllianceClient(object) :
 
-    url = "https://api-test.dpa.com"
+    #url = "https://api-test.dpa.com"
+    url = "https://api.dpa.com"
 
     def __init__(self,client_id=None,
                       client_secret=None,
